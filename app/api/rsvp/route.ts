@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const name = String(b.name ?? "").trim().slice(0, 120);
     const message = String(b.message ?? "").trim().slice(0, 1000);
     if (!name || typeof b.attending !== "boolean") return NextResponse.json({ error: "Invalid" }, { status: 400 });
-    const { error } = await getSupabase().from("raymund_vanessa_rsvp").insert({ name, message: message || null, attending: b.attending });
+    const { error } = await getSupabase().from("rsvp").insert({ name, message: message || null, attending: b.attending });
     if (error) throw error;
     return NextResponse.json({ ok: true });
   } catch (e) {
