@@ -38,8 +38,8 @@ export default function Attire() {
           <p className="swatch-feedback" aria-live="polite">Previewing <strong>{selected.name}</strong> attire</p>
         </div>
         <div className="attire-examples">
-          <figure><div><Image src="/attire-men.png" alt={`Semi-formal suit and barong examples previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div><figcaption><strong>Gentlemen</strong><span>Suit and tie or barong, with dress shoes</span></figcaption></figure>
-          <figure><div><Image src="/attire-women.png" alt={`Semi-formal dress examples previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div><figcaption><strong>Ladies</strong><span>Midi or cocktail dress, with heels or dressy flats</span></figcaption></figure>
+          <figure><div><Image src="/attire-men.webp" alt={`Semi-formal suit and barong examples previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div><figcaption><strong>Gentlemen</strong><span>Suit and tie or barong, with dress shoes</span></figcaption></figure>
+          <figure><div><Image src="/attire-women.webp" alt={`Semi-formal dress examples previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div><figcaption><strong>Ladies</strong><span>Midi or cocktail dress, with heels or dressy flats</span></figcaption></figure>
         </div>
       </div>
     </section>

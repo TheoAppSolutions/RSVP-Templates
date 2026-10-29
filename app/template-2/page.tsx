@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="template-two"><DesignShell>
       <main>
-        <Hero variant={1} />
+        <Hero />
         <Countdown />
         <MapSection />
         <Attire />

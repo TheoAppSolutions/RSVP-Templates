@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const designs = [
-  { number: "01", title: "Classic blue", description: "A romantic invitation with a full photo cover and soft blue details.", href: "/template-1", color: "from-[#d8e5ed] to-[#f3f7fa]", accent: "text-[#476279]" },
-  { number: "02", title: "Editorial", description: "A warm, modern layout with elegant type and room to tell your story.", href: "/template-2", color: "from-[#e7e1d5] to-[#faf8f4]", accent: "text-[#3e5d70]" },
-  { number: "03", title: "Modern heirloom", description: "A refined invitation with a split cover and thoughtful details.", href: "/template-3", color: "from-[#d9ded8] to-[#f7f5ef]", accent: "text-[#a68a69]" },
+  { number: "01", title: "Blue Hour", description: "A classic, full-photo invitation framed in soft blue tones and timeless romantic details.", href: "/template-1", image: "/template-previews/template-1.webp" },
+  { number: "02", title: "The Editorial", description: "A warm, magazine-inspired design with expressive typography and a story-led split layout.", href: "/template-2", image: "/template-previews/template-2.webp" },
+  { number: "03", title: "Modern Heirloom", description: "A cinematic, refined invitation pairing a dramatic photo with keepsake-worthy details.", href: "/template-3", image: "/template-previews/template-3.webp" },
 ];
 
 export default function TemplateMenu() {
@@ -20,7 +21,11 @@ export default function TemplateMenu() {
       </div>
       <section className="grid gap-5 md:grid-cols-3" aria-label="Invitation templates">
         {designs.map((design) => <Link key={design.number} href={design.href} className="group overflow-hidden rounded-[1.5rem] border border-[#e0e3df] bg-white shadow-[0_14px_40px_rgba(36,59,69,0.06)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(36,59,69,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#476279]">
-          <div className={`flex h-44 items-end bg-gradient-to-br ${design.color} p-7`}><span className={`font-serif text-7xl italic ${design.accent}`}>{design.number}</span></div>
+          <div className="relative flex h-44 items-end overflow-hidden bg-[#e7e9e6] p-7">
+            <Image src={design.image} alt={`Preview of ${design.title}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#172b33]/55 via-[#172b33]/10 to-transparent" />
+            <span className="relative z-10 font-serif text-7xl italic text-white drop-shadow-md">{design.number}</span>
+          </div>
           <div className="p-7"><h2 className="font-serif text-3xl">{design.title}</h2><p className="mt-3 min-h-16 text-sm leading-6 text-[#68777b]">{design.description}</p><span className="mt-7 inline-flex border-b border-[#a68a69] pb-1 text-[11px] uppercase tracking-[0.16em]">View template <span className="ml-5 transition group-hover:translate-x-1">↗</span></span></div>
         </Link>)}
       </section>

@@ -17,13 +17,13 @@ const ATTIRE = [
   {
     label: "Gentlemen",
     note: "Suit and tie, or a barong, paired with dress shoes.",
-    image: "/attire-men.png",
+    image: "/attire-men.webp",
     alt: "Three examples of semi-formal menswear in dusty blue, including a barong Tagalog",
   },
   {
     label: "Ladies",
     note: "Midi or cocktail dress, with heels or dressy flats.",
-    image: "/attire-women.png",
+    image: "/attire-women.webp",
     alt: "Three examples of semi-formal dresses in shades of dusty blue",
   },
 ];

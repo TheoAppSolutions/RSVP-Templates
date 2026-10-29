@@ -6,6 +6,8 @@ import { useMusic } from "./MusicPlayer";
 
 export default function Hero() {
   const { play } = useMusic();
+  const groom = EVENT.groom.split(" ")[0];
+  const bride = EVENT.bride.split(" ")[0];
 
   function goToRsvp() {
     play();
@@ -14,42 +16,38 @@ export default function Hero() {
 
   return (
     <header id="top" className="hero">
+      <Image src={MEDIA.hero} alt="Raymund and Vanessa embracing outdoors" fill priority quality={90} sizes="100vw" className="hero-image" />
+      <div className="hero-shade" aria-hidden="true" />
+
       <nav className="site-nav" aria-label="Main navigation">
-        <a href="#top" className="nav-brand" aria-label="Raymund and Vanessa, top of page">R<span>&amp;</span>V</a>
+        <a href="#top" className="nav-brand" aria-label={`${EVENT.honoree}, top of page`}>R<span>/</span>V</a>
         <div className="nav-links">
           <a href="#venues">The day</a>
           <a href="#gallery">Our story</a>
           <a href="#details">Details</a>
         </div>
-        <button type="button" onClick={goToRsvp} className="nav-rsvp">RSVP <span aria-hidden="true">↗</span></button>
+        <button type="button" onClick={goToRsvp} className="nav-rsvp">Reply <span aria-hidden="true">↗</span></button>
       </nav>
 
-      <div className="hero-grid">
+      <div className="hero-content">
         <div className="hero-copy">
-          <div className="hero-copy-inner">
-            <span className="eyebrow">With joyful hearts &amp; grateful souls</span>
-            <p className="hero-preface">Together with their families,</p>
-            <h1 aria-label={EVENT.honoree}>
-              <span>Raymund</span>
-              <i aria-hidden="true">&amp;</i>
-              <span>Vanessa</span>
-            </h1>
-            <p className="hero-invite">invite you to celebrate their wedding</p>
-            <div className="hero-rule" aria-hidden="true"><span>✦</span></div>
-            <div className="hero-date">
-              <span>Monday</span>
-              <strong>21</strong>
-              <span>December<br />2026</span>
-            </div>
-            <p className="hero-location">1:30 in the afternoon <span aria-hidden="true">·</span> Tacloban City</p>
-            <button type="button" onClick={goToRsvp} className="primary-link">Kindly RSVP <span aria-hidden="true">↗</span></button>
+          <p className="hero-kicker">Together with their families</p>
+          <h1 aria-label={EVENT.honoree}>
+            <span>{groom}</span>
+            <span className="hero-name-last"><i aria-hidden="true">&amp;</i>{bride}</span>
+          </h1>
+          <p className="hero-invite">Joyfully invite you to celebrate their wedding and the beginning of their forever.</p>
+          <div className="hero-meta">
+            <span>{EVENT.dateLong}</span>
+            <span>{EVENT.time} · Tacloban City</span>
           </div>
-          <span className="hero-edition">A celebration of love <span>—</span> 2026</span>
+          <button type="button" onClick={goToRsvp} className="primary-link">Kindly RSVP <span aria-hidden="true">↗</span></button>
         </div>
-        <div className="hero-photo">
-          <Image src={MEDIA.hero} alt="Raymund and Vanessa embracing outdoors" fill priority quality={90} sizes="(min-width: 900px) 52vw, 100vw" className="hero-image" />
-          <div className="photo-caption">Raymund <span>&amp;</span> Vanessa <i>·</i> December 21, 2026</div>
-        </div>
+      </div>
+
+      <div className="hero-bottom">
+        <span>R &amp; V <i aria-hidden="true">✦</i> 21.12.2026</span>
+        <a href="#venues">Discover the celebration <span aria-hidden="true">↓</span></a>
       </div>
     </header>
   );
