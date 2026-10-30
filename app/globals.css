@@ -22,7 +22,7 @@ body { @apply bg-dusty-50 text-dusty-900 font-sans antialiased; }
 .template-two .hero-two-stage::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(transparent, #14252a80); pointer-events: none; }
 .template-two .hero-two-photo-note { position: absolute; z-index: 1; top: 35px; right: 50px; padding: 11px 15px; background: #1d3645b8; color: #fff; font-size: 9px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
 .template-two .hero-two-photo-note span { margin: 0 8px; color: #e8d9c1; }
-.template-two .hero-two-panel { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 50px; width: min(1320px, 100%); margin: 0 auto; padding: 43px 52px; background: #faf8f4f2; box-shadow: 0 25px 70px #132a3466; backdrop-filter: blur(12px); }
+.template-two .hero-two-panel { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 50px; width: min(1320px, 100%); margin: 0 auto; padding: 43px 52px; background: rgba(255, 255, 255, .82); box-shadow: none; backdrop-filter: none; }
 .template-two .hero-two-kicker { color: #597384; font-size: 10px; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; }
 .template-two .hero-two-main h1 { margin: 19px 0 0; font-family: var(--font-serif), Georgia, serif; font-size: clamp(63px, 6.3vw, 100px); font-weight: 300; letter-spacing: -.07em; line-height: .9; white-space: nowrap; }
 .template-two .hero-two-main h1 em { color: #718994; font-size: .7em; font-weight: 300; }
@@ -60,7 +60,7 @@ body { @apply bg-dusty-50 text-dusty-900 font-sans antialiased; }
   .template-two .hero-two-photo { position: relative; height: 450px; }
   .template-two .hero-two-photo img { object-position: 42% center; }
   .template-two .hero-two-photo-note { top: 22px; right: 20px; max-width: 210px; text-align: right; font-size: 8px; line-height: 1.6; }
-  .template-two .hero-two-panel { display: block; width: calc(100% - 28px); margin: -28px auto 0; padding: 32px 25px 28px; background: #faf8f4; }
+  .template-two .hero-two-panel { display: block; width: calc(100% - 28px); margin: -28px auto 0; padding: 32px 25px 28px; background: rgba(255, 255, 255, .9); }
   .template-two .hero-two-kicker { font-size: 9px; letter-spacing: .22em; }
   .template-two .hero-two-main h1 { margin-top: 18px; font-size: clamp(61px, 15vw, 80px); line-height: .83; white-space: normal; }
   .template-two .hero-two-invite { margin-top: 20px; font-size: 20px; }
