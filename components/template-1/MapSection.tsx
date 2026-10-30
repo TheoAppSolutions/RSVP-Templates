@@ -1,18 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { EVENT } from "@/lib/event";
-
-const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+import { VENUES } from "@/lib/event";
+import { getVenueDirectionsUrl, getVenueMapSource, getVenueQuery } from "@/lib/maps";
 
 export default function MapSection() {
-  const venues = [EVENT.ceremony, EVENT.reception];
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeVenue = venues[activeIndex];
-  const query = encodeURIComponent(activeVenue.address ? `${activeVenue.name}, ${activeVenue.address}` : activeVenue.name);
-  const mapSource = apiKey
-    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${query}`
-    : `https://maps.google.com/maps?q=${query}&output=embed`;
+  const activeVenue = VENUES[activeIndex];
+  const query = getVenueQuery(activeVenue);
+  const mapSource = getVenueMapSource(activeVenue);
 
   return (
     <section id="venues" className="scroll-mt-4 bg-dusty-50 px-5 pb-24 pt-20 md:pb-28 md:pt-24" aria-labelledby="venues-title">
@@ -29,7 +25,7 @@ export default function MapSection() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1" role="tablist" aria-label="Wedding venues">
-            {venues.map((venue, index) => {
+            {VENUES.map((venue, index) => {
               const active = index === activeIndex;
               return (
                 <button
@@ -71,7 +67,7 @@ export default function MapSection() {
               <p className="text-[9px] uppercase tracking-[0.35em] text-dusty-500">{activeVenue.label}</p>
               <p className="mt-1 font-serif text-xl text-dusty-900">{activeVenue.name}</p>
               <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${query}`}
+                href={getVenueDirectionsUrl(activeVenue)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-dusty-700 px-5 py-2.5 text-[9px] uppercase tracking-[0.25em] text-white transition hover:bg-dusty-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-dusty-300"

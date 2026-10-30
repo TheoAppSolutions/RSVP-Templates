@@ -1,3 +1,5 @@
+export type Venue = { label: string; name: string; address: string };
+
 export const EVENT = {
   honoree: "Raymund & Vanessa",
   groom: "Raymund Gumba",
@@ -13,6 +15,9 @@ export const EVENT = {
   ceremony: { label: "Ceremony", name: "Sacred Heart Church", address: "Tacloban City" },
   reception: { label: "Reception", name: "Hotel Alejandro Roof Deck", address: "Tacloban City" },
 };
+
+export const VENUES = [EVENT.ceremony, EVENT.reception] as const;
+export const EVENT_TIMESTAMP = new Date(EVENT.dateISO).getTime();
 
 export const MEDIA = {
   tagline: "Two hearts, one beautiful beginning. Join us as we say “I do.”",

@@ -4,29 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { COLORS } from "@/lib/template-2-colors";
 import { EVENT } from "@/lib/event";
+import { ATTIRE, createSwatches } from "@/lib/attire";
 
-const SWATCHES = [
-  ["Mist", COLORS[200]],
-  ["Powder", COLORS[300]],
-  ["Dusty Blue", COLORS[400]],
-  ["Steel", COLORS[500]],
-  ["Slate", COLORS[700]],
-] as const;
-
-const ATTIRE = [
-  {
-    label: "Gentlemen",
-    note: "Suit and tie, or a barong, paired with dress shoes.",
-    image: "/attire-men.webp",
-    alt: "Three examples of semi-formal menswear in dusty blue, including a barong Tagalog",
-  },
-  {
-    label: "Ladies",
-    note: "Midi or cocktail dress, with heels or dressy flats.",
-    image: "/attire-women.webp",
-    alt: "Three examples of semi-formal dresses in shades of dusty blue",
-  },
-];
+const SWATCHES = createSwatches(COLORS);
 
 type Hsl = { h: number; s: number; l: number };
 
@@ -137,7 +117,7 @@ function OutfitImage({ src, alt, color }: { src: string; alt: string; color: str
       <canvas
         ref={canvasRef}
         role="img"
-        aria-label={`${alt}. Outfit color: ${SWATCHES.find(([, value]) => value === color)?.[0] ?? "selected color"}.`}
+        aria-label={`${alt}. Outfit color: ${SWATCHES.find((swatch) => swatch.color === color)?.name ?? "selected color"}.`}
         className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ${ready ? "opacity-100" : "opacity-0"}`}
       />
     </div>
@@ -146,7 +126,7 @@ function OutfitImage({ src, alt, color }: { src: string; alt: string; color: str
 
 export default function Attire() {
   const [selectedColor, setSelectedColor] = useState<string>(COLORS[400]);
-  const selectedName = SWATCHES.find(([, color]) => color === selectedColor)?.[0] ?? "Dusty Blue";
+  const selectedName = SWATCHES.find((swatch) => swatch.color === selectedColor)?.name ?? "Dusty Blue";
 
   return (
     <section className="border-y border-dusty-200 bg-dusty-100 px-5 py-20 md:px-8 md:py-28" aria-labelledby="attire-title">
@@ -158,7 +138,7 @@ export default function Attire() {
             <p className="mt-5 font-serif text-2xl italic text-dusty-700">{EVENT.dressCode}</p>
             <p className="mt-6 max-w-sm text-sm leading-7 text-dusty-700">Polished and refined: dressy, but not black tie. We&apos;d love to see you in shades of our {EVENT.color.toLowerCase()} palette.</p>
             <div className="mt-9 flex flex-wrap gap-4" role="group" aria-label="Choose an attire color">
-              {SWATCHES.map(([name, color]) => {
+              {SWATCHES.map(({ name, color }) => {
                 const selected = selectedColor === color;
                 return (
                   <button

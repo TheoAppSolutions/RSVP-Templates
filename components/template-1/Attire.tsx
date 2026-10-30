@@ -4,14 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { COLORS } from "@/lib/template-1-colors";
 import { EVENT } from "@/lib/event";
+import { ATTIRE, createSwatches } from "@/lib/attire";
 
-const SWATCHES = [
-  { name: "Mist", color: COLORS[200] },
-  { name: "Powder", color: COLORS[300] },
-  { name: "Dusty Blue", color: COLORS[400] },
-  { name: "Steel", color: COLORS[500] },
-  { name: "Slate", color: COLORS[700] },
-] as const;
+const SWATCHES = createSwatches(COLORS);
 
 // Match the luminance of the original dusty blue fabric while replacing its hue.
 const ORIGINAL_FABRIC_LUMINANCE = 0.66;
@@ -27,21 +22,6 @@ function recolorMatrix(color: string) {
     .concat("0 0 0 1 0")
     .join(" ");
 }
-
-const ATTIRE = [
-  {
-    label: "Gentlemen",
-    note: "Suit and tie, or a barong, paired with dress shoes.",
-    image: "/attire-men.webp",
-    alt: "Three examples of semi-formal menswear, including a barong Tagalog",
-  },
-  {
-    label: "Ladies",
-    note: "Midi or cocktail dress, with heels or dressy flats.",
-    image: "/attire-women.webp",
-    alt: "Three examples of semi-formal dresses",
-  },
-];
 
 export default function Attire() {
   const [selected, setSelected] = useState<(typeof SWATCHES)[number]>(SWATCHES[2]);

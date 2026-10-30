@@ -1,15 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { EVENT } from "@/lib/event";
-
-const target = new Date(EVENT.dateISO).getTime();
+import { EVENT_TIMESTAMP } from "@/lib/event";
 
 export default function Countdown() {
   const [remaining, setRemaining] = useState<number | null>(null);
 
   useEffect(() => {
-    const tick = () => setRemaining(target - Date.now());
+    const tick = () => setRemaining(EVENT_TIMESTAMP - Date.now());
     tick();
     const timer = window.setInterval(tick, 1000);
     return () => window.clearInterval(timer);

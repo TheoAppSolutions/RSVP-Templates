@@ -4,14 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { COLORS } from "@/lib/template-3-colors";
 import { EVENT } from "@/lib/event";
+import { ATTIRE, createSwatches } from "@/lib/attire";
 
-const swatches = [
-  { name: "Mist", color: COLORS[200] },
-  { name: "Powder", color: COLORS[300] },
-  { name: "Dusty blue", color: COLORS[400] },
-  { name: "Steel", color: COLORS[500] },
-  { name: "Slate", color: COLORS[700] },
-] as const;
+const swatches = createSwatches(COLORS);
 
 export default function Attire() {
   const [selected, setSelected] = useState<(typeof swatches)[number]>(swatches[2]);
@@ -38,8 +33,12 @@ export default function Attire() {
           <p className="swatch-feedback" aria-live="polite">Previewing <strong>{selected.name}</strong> attire</p>
         </div>
         <div className="attire-examples">
-          <figure><div><Image src="/attire-men.webp" alt={`Semi-formal suit and barong examples previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div><figcaption><strong>Gentlemen</strong><span>Suit and tie or barong, with dress shoes</span></figcaption></figure>
-          <figure><div><Image src="/attire-women.webp" alt={`Semi-formal dress examples previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div><figcaption><strong>Ladies</strong><span>Midi or cocktail dress, with heels or dressy flats</span></figcaption></figure>
+          {ATTIRE.map(({ label, note, image, alt }) => (
+            <figure key={label}>
+              <div><Image src={image} alt={`${alt} previewed in ${selected.name.toLowerCase()}`} width={1536} height={1024} sizes="(min-width: 900px) 25vw, 50vw" className="recolor-attire" /></div>
+              <figcaption><strong>{label}</strong><span>{note}</span></figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

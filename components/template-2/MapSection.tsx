@@ -1,18 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { EVENT } from "@/lib/event";
-
-const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+import { EVENT, VENUES } from "@/lib/event";
+import { getVenueDirectionsUrl, getVenueMapSource } from "@/lib/maps";
 
 export default function MapSection() {
-  const venues = [EVENT.ceremony, EVENT.reception];
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeVenue = venues[activeIndex];
-  const query = encodeURIComponent(activeVenue.address ? `${activeVenue.name}, ${activeVenue.address}` : activeVenue.name);
-  const mapSource = apiKey
-    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${query}`
-    : `https://maps.google.com/maps?q=${query}&output=embed`;
+  const activeVenue = VENUES[activeIndex];
+  const mapSource = getVenueMapSource(activeVenue);
 
   return (
     <section id="venues" className="scroll-mt-4 bg-dusty-50 px-5 py-20 md:px-8 md:py-28" aria-labelledby="venues-title">
@@ -27,7 +22,7 @@ export default function MapSection() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
           <div className="divide-y divide-dusty-200 border-y border-dusty-200" role="tablist" aria-label="Wedding venues">
-            {venues.map((venue, index) => {
+            {VENUES.map((venue, index) => {
               const active = index === activeIndex;
               return (
                 <button key={venue.label} id={`venue-tab-${index}`} type="button" role="tab" aria-selected={active} aria-controls="venue-map" onClick={() => setActiveIndex(index)}
@@ -50,7 +45,7 @@ export default function MapSection() {
             <div className="absolute inset-x-4 bottom-4 border border-dusty-200 bg-dusty-50/95 p-5 backdrop-blur-sm sm:inset-x-auto sm:bottom-6 sm:left-6 sm:max-w-xs sm:p-6">
               <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-dusty-600">{activeVenue.label}</p>
               <p className="mt-2 font-serif text-2xl text-dusty-900">{activeVenue.name}</p>
-              <a href={`https://www.google.com/maps/dir/?api=1&destination=${query}`} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex border-b border-dusty-700 pb-1 text-[10px] font-medium uppercase tracking-[0.2em] text-dusty-800 transition hover:border-dusty-400">Get directions <span className="ml-4" aria-hidden>↗</span></a>
+              <a href={getVenueDirectionsUrl(activeVenue)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex border-b border-dusty-700 pb-1 text-[10px] font-medium uppercase tracking-[0.2em] text-dusty-800 transition hover:border-dusty-400">Get directions <span className="ml-4" aria-hidden>↗</span></a>
             </div>
           </div>
         </div>
