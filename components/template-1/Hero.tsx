@@ -19,7 +19,7 @@ export default function Hero({ variant = 1 }: { variant?: 1 | 2 | 3 }) {
     <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-dusty-900 text-white md:min-h-screen">
       <Image
         src={MEDIA.hero}
-        alt="Raymund and Vanessa"
+        alt={EVENT.honoree}
         fill
         priority
         quality={90}

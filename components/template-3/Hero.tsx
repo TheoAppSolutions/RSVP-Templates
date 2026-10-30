@@ -16,11 +16,11 @@ export default function Hero() {
 
   return (
     <header id="top" className="hero">
-      <Image src={MEDIA.hero} alt="Raymund and Vanessa embracing outdoors" fill priority quality={90} sizes="100vw" className="hero-image" />
+      <Image src={MEDIA.hero} alt={`${EVENT.honoree} embracing outdoors`} fill priority quality={90} sizes="100vw" className="hero-image" />
       <div className="hero-shade" aria-hidden="true" />
 
       <nav className="site-nav" aria-label="Main navigation">
-        <a href="#top" className="nav-brand" aria-label={`${EVENT.honoree}, top of page`}>R<span>/</span>V</a>
+        <a href="#top" className="nav-brand" aria-label={`${EVENT.honoree}, top of page`}>{EVENT.initials}</a>
         <div className="nav-links">
           <a href="#venues">The day</a>
           <a href="#gallery">Our story</a>
@@ -46,7 +46,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-bottom">
-        <span>R &amp; V <i aria-hidden="true">✦</i> 21.12.2026</span>
+        <span>{EVENT.initials} <i aria-hidden="true">✦</i> 21.12.2026</span>
         <a href="#venues">Discover the celebration <span aria-hidden="true">↓</span></a>
       </div>
     </header>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { MEDIA } from "@/lib/event";
+import { EVENT, MEDIA } from "@/lib/event";
 
 export default function Gallery() {
   const [bad, setBad] = useState<string[]>([]);
@@ -60,14 +60,14 @@ export default function Gallery() {
         <div className="section-heading gallery-heading"><span className="eyebrow">02 / The little moments</span><h2 id="gallery-title" className="display-heading">A glimpse into <em>our story</em></h2><p>The laughter, quiet glances, and little moments that brought us here.</p></div>
         <div ref={gridRef} className={`photo-grid${ready ? " reveal-ready" : ""}`}>
           {imgs.map((src, index) => <button key={src} type="button" data-src={src} onClick={() => setOpen(index)} aria-label={`Enlarge photo ${index + 1} of ${imgs.length}`} className={`photo-tile photo-tile-${index + 1}${revealed.has(src) ? " is-revealed" : ""}`} style={{ transitionDelay: `${index * 120}ms` }}>
-            <Image src={src} alt={`Raymund and Vanessa, moment ${index + 1}`} fill sizes="(min-width: 900px) 32vw, 50vw" onError={() => setBad((current) => current.includes(src) ? current : [...current, src])} />
+            <Image src={src} alt={`${EVENT.honoree}, moment ${index + 1}`} fill sizes="(min-width: 900px) 32vw, 50vw" onError={() => setBad((current) => current.includes(src) ? current : [...current, src])} />
             <span aria-hidden="true">View photo ↗</span>
           </button>)}
         </div>
       </div>
       {open !== null && imgs[open] && <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={`Photo ${open + 1} of ${imgs.length}`} onClick={() => setOpen(null)}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={imgs[open]} alt={`Raymund and Vanessa, moment ${open + 1}`} onClick={(event) => event.stopPropagation()} />
+        <img src={imgs[open]} alt={`${EVENT.honoree}, moment ${open + 1}`} onClick={(event) => event.stopPropagation()} />
         <button type="button" className="modal-close" aria-label="Close gallery" onClick={() => setOpen(null)}>×</button>
         <button type="button" className="modal-prev" aria-label="Previous photo" onClick={(event) => { event.stopPropagation(); step(-1); }}>‹</button>
         <button type="button" className="modal-next" aria-label="Next photo" onClick={(event) => { event.stopPropagation(); step(1); }}>›</button>

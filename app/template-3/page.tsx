@@ -8,6 +8,7 @@ import Gallery from "@/components/template-3/Gallery";
 import Entourage from "@/components/template-3/Entourage";
 import RsvpForm from "@/components/template-3/RsvpForm";
 import DesignShell from "@/components/template-3/MusicPlayer";
+import { EVENT } from "@/lib/event";
 
 export default function Home() {
   return (
@@ -27,13 +28,13 @@ export default function Home() {
               <span className="eyebrow light">The celebration is better with you</span>
               <h2 id="rsvp-title" className="display-heading">The pleasure of your <em>company</em></h2>
               <p>We would be honored to celebrate this day with you. Kindly reply by November 30, 2026.</p>
-              <div className="rsvp-monogram" aria-hidden="true">R <span>&amp;</span> V</div>
+              <div className="rsvp-monogram" aria-hidden="true">{EVENT.initials}</div>
             </div>
             <RsvpForm />
           </div>
         </section>
         <footer className="site-footer">
-          <div className="footer-mark">R <span>&amp;</span> V</div>
+          <div className="footer-mark">{EVENT.initials}</div>
           <p>December 21, 2026 <span aria-hidden="true">·</span> Tacloban City</p>
           <p>Made with love, for the people we love.</p>
           <a href="#top">Back to top ↑</a>

@@ -1,3 +1,5 @@
+import { EVENT } from "@/lib/event";
+
 export const GOOD_TO_KNOW_NOTES = [
   {
     eyebrow: "Guest list",
@@ -33,6 +35,6 @@ export const GOOD_TO_KNOW_NOTES = [
     eyebrow: "Occasion focus",
     title: "Today is about the couple",
     template3Title: "Any other requests?",
-    body: "Please save proposals, pregnancy announcements, and other major announcements for another occasion. Today is dedicated to celebrating Raymund and Vanessa.",
+    body: `Please save proposals, pregnancy announcements, and other major announcements for another occasion. Today is dedicated to celebrating ${EVENT.honoree}.`,
   },
 ] as const;

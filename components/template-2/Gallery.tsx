@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MEDIA } from "@/lib/event";
+import { EVENT, MEDIA } from "@/lib/event";
 
 export default function Gallery() {
   const [bad, setBad] = useState<string[]>([]);
@@ -105,7 +105,7 @@ export default function Gallery() {
               <span className="relative block aspect-[4/3] overflow-hidden sm:aspect-[3/2]">
                 <Image
                   src={src}
-                  alt={`Raymund and Vanessa, moment ${index + 1}`}
+                  alt={`${EVENT.honoree}, moment ${index + 1}`}
                   fill
                   sizes="(min-width: 1170px) 960px, 82vw"
                   loading={index < 2 ? "eager" : "lazy"}
@@ -148,7 +148,7 @@ export default function Gallery() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={imgs[open]}
-            alt={`Raymund and Vanessa, moment ${open + 1}`}
+            alt={`${EVENT.honoree}, moment ${open + 1}`}
             className="max-h-[86vh] max-w-[92vw] object-contain shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           />

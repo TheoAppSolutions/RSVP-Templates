@@ -8,6 +8,7 @@ import Entourage from "@/components/template-2/Entourage";
 import Attire from "@/components/template-2/Attire";
 import Gift from "@/components/template-2/Gift";
 import GoodToKnow from "@/components/template-2/GoodToKnow";
+import { EVENT } from "@/lib/event";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
               <p className="mt-8 max-w-sm text-sm leading-7 text-dusty-700">We hope you can join us as we begin this new chapter. Please let us know if you&apos;ll be celebrating with us by November 30, 2026.</p>
               <div className="mt-10 border-t border-dusty-300 pt-6">
                 <p className="font-serif text-2xl italic text-dusty-800">With love,</p>
-                <p className="mt-2 font-serif text-3xl text-dusty-900">Raymund &amp; Vanessa</p>
+                <p className="mt-2 font-serif text-3xl text-dusty-900">{EVENT.honoree}</p>
               </div>
             </div>
             <RsvpForm variant={1} />
@@ -37,7 +38,7 @@ export default function Home() {
         </section>
         <footer className="bg-dusty-900 px-5 py-9 text-dusty-100 md:px-8">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
-            <p className="font-serif text-3xl font-light">R <em className="text-dusty-300">&</em> V</p>
+            <p className="font-serif text-3xl font-light">{EVENT.initials}</p>
             <p className="text-[10px] uppercase tracking-[0.26em] text-dusty-300">21 December 2026 · Tacloban City</p>
             <a href="#top" className="text-[10px] uppercase tracking-[0.2em] text-dusty-100 hover:text-white">Back to top ↑</a>
           </div>

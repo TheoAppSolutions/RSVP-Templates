@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <header id="top" className="hero-two">
       <nav className="hero-two-nav" aria-label="Main navigation">
-        <a href="#top" className="hero-two-brand" aria-label={`${EVENT.honoree}, back to top`}>R <em>&amp;</em> V</a>
+        <a href="#top" className="hero-two-brand" aria-label={`${EVENT.honoree}, back to top`}>{EVENT.initials}</a>
         <div className="hero-two-links">
           <a href="#venues">The celebration</a>
           <a href="#good-to-know">Guest notes</a>
@@ -28,7 +28,7 @@ export default function Hero() {
 
       <div className="hero-two-stage">
         <div className="hero-two-photo">
-          <Image src={MEDIA.hero} alt="Raymund and Vanessa embracing outdoors" fill priority quality={90} sizes="100vw" />
+          <Image src={MEDIA.hero} alt={`${EVENT.honoree} embracing outdoors`} fill priority quality={90} sizes="100vw" />
         </div>
         <span className="hero-two-photo-note">An invitation to celebrate <span aria-hidden="true">✦</span> Tacloban City</span>
 
