@@ -1,13 +1,13 @@
-import RsvpForm from "@/templates/template-2/components/RsvpForm";
-import DesignShell from "@/templates/template-2/components/MusicPlayer";
-import Hero from "@/templates/template-2/components/Hero";
-import Countdown from "@/templates/template-2/components/Countdown";
-import MapSection from "@/templates/template-2/components/MapSection";
-import Gallery from "@/templates/template-2/components/Gallery";
-import Entourage from "@/templates/template-2/components/Entourage";
-import Attire from "@/templates/template-2/components/Attire";
-import Gift from "@/templates/template-2/components/Gift";
-import GoodToKnow from "@/templates/template-2/components/GoodToKnow";
+import RsvpForm from "@/components/template-2/RsvpForm";
+import DesignShell from "@/components/template-2/MusicPlayer";
+import Hero from "@/components/template-2/Hero";
+import Countdown from "@/components/template-2/Countdown";
+import MapSection from "@/components/template-2/MapSection";
+import Gallery from "@/components/template-2/Gallery";
+import Entourage from "@/components/template-2/Entourage";
+import Attire from "@/components/template-2/Attire";
+import Gift from "@/components/template-2/Gift";
+import GoodToKnow from "@/components/template-2/GoodToKnow";
 
 export default function Home() {
   return (
