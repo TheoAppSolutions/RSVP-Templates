@@ -11,7 +11,7 @@ export default function TemplateMenu() {
   return <main className="min-h-screen bg-[#f8f7f3] px-5 py-10 text-[#243b45] sm:px-8 sm:py-16">
     <div className="mx-auto max-w-6xl">
       <header className="flex flex-wrap items-center justify-between gap-5 border-b border-[#d8d6ce] pb-7">
-        <div><p className="text-[10px] uppercase tracking-[0.32em] text-[#718994]">Raymund &amp; Vanessa</p><p className="mt-2 font-serif text-3xl">Wedding invitations</p></div>
+        <div><p className="text-[10px] uppercase tracking-[0.32em] text-[#718994]">Invitation collection</p><p className="mt-2 font-serif text-3xl">Wedding invitations</p></div>
         <Link href="/admin" className="rounded-full border border-[#bfcbd0] px-5 py-2.5 text-xs font-medium transition hover:bg-white">Admin dashboard ↗</Link>
       </header>
       <div className="max-w-3xl py-14 sm:py-20">

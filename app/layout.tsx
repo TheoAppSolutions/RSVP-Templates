@@ -7,8 +7,8 @@ const sans = localFont({ src: "../fonts/jost-latin.woff2", weight: "300 500", va
 const script = localFont({ src: "../fonts/dancing-script-latin.woff2", variable: "--font-script" });
 
 export const metadata: Metadata = {
-  title: "Raymund & Vanessa — Wedding RSVP templates",
-  description: "Explore three invitation designs for Raymund and Vanessa's wedding.",
+  title: "Wedding RSVP templates",
+  description: "Explore three invitation designs and choose the right look for your wedding.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

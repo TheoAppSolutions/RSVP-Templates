@@ -179,7 +179,7 @@ export default function Admin() {
         <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-dusty-200/45 blur-3xl" aria-hidden />
         <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-dusty-300/35 blur-3xl" aria-hidden />
         <form onSubmit={load} className="relative w-full max-w-md rounded-[2rem] border border-white/70 bg-white/90 p-8 shadow-[0_24px_80px_rgba(54,75,93,0.14)] backdrop-blur sm:p-10">
-          <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-dusty-700 font-serif text-xl italic text-white">R&amp;V</div>
+          <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-dusty-700 font-serif text-xl italic text-white">RSVP</div>
           <p className="text-[10px] uppercase tracking-[0.35em] text-dusty-500">Private dashboard</p>
           <h1 className="mt-2 font-serif text-4xl font-medium text-dusty-900">Welcome back</h1>
           <p className="mt-3 text-sm leading-6 text-dusty-600">Sign in to manage your guest responses.</p>
@@ -203,7 +203,7 @@ export default function Admin() {
       <header className="border-b border-dusty-200/80 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-dusty-500">Raymund &amp; Vanessa</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-dusty-500">Private RSVP dashboard</p>
             <h1 className="mt-1 font-serif text-3xl font-medium text-dusty-900 sm:text-4xl">Guest responses</h1>
           </div>
           <div className="flex items-center gap-2">
