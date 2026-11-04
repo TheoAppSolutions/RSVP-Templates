@@ -22,11 +22,11 @@ export default function Countdown() {
   ] as const;
 
   return (
-    <section className="countdown-section" aria-label="Countdown to the wedding">
+    <section className="countdown-section" aria-label="Countdown to Lemuel’s birthday">
       <div className="countdown-inner">
-        <p className="countdown-note">The day is drawing near <span aria-hidden="true">✦</span></p>
+        <p className="countdown-note">The candles are waiting <span aria-hidden="true">✦</span></p>
         {remaining !== null && remaining <= 0 ? (
-          <p className="countdown-passed">Forever starts here.</p>
+          <p className="countdown-passed">Let the birthday fun begin.</p>
         ) : (
           <div className="countdown-parts" role="timer" aria-live="off">
             {parts.map(([label, value]) => (

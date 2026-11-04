@@ -15,13 +15,13 @@ export default function MapSection() {
         <div className="grid gap-8 border-b border-dusty-200 pb-9 md:grid-cols-[1fr_1fr] md:items-end">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.36em] text-dusty-600">01 / The celebration</p>
-            <h2 id="venues-title" className="mt-4 font-serif text-5xl font-light leading-none tracking-[-0.035em] text-dusty-900 sm:text-6xl">Where we&apos;ll <em>gather</em></h2>
+            <h2 id="venues-title" className="mt-4 font-serif text-5xl font-light leading-none tracking-[-0.035em] text-dusty-900 sm:text-6xl">Where we&apos;ll <em>celebrate</em></h2>
           </div>
-          <p className="max-w-md text-sm leading-7 text-dusty-700 md:ml-auto">A day of promises and celebration in Tacloban City. Find the ceremony and reception details below.</p>
+          <p className="max-w-md text-sm leading-7 text-dusty-700 md:ml-auto">One memorable birthday, one beautiful room, and all the people who make Lemuel’s life worth celebrating.</p>
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
-          <div className="divide-y divide-dusty-200 border-y border-dusty-200" role="tablist" aria-label="Wedding venues">
+          <div className="divide-y divide-dusty-200 border-y border-dusty-200" role="tablist" aria-label="Birthday venue">
             {VENUES.map((venue, index) => {
               const active = index === activeIndex;
               return (
@@ -37,7 +37,7 @@ export default function MapSection() {
                 </button>
               );
             })}
-            <div className="py-6 text-xs leading-6 text-dusty-600">Ceremony begins at <strong className="font-medium text-dusty-900">{EVENT.time}</strong>. Please arrive a little early to settle in.</div>
+            <div className="py-6 text-xs leading-6 text-dusty-600">The celebration begins at <strong className="font-medium text-dusty-900">{EVENT.time}</strong>. Please arrive a little early to settle in.</div>
           </div>
 
           <div id="venue-map" role="tabpanel" aria-labelledby={`venue-tab-${activeIndex}`} className="relative min-h-[440px] overflow-hidden border border-dusty-200 bg-dusty-100 md:min-h-[530px]">

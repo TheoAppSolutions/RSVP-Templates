@@ -2,22 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 
 const designs = [
-  { number: "01", title: "Blue Hour", description: "A classic, full-photo invitation framed in soft blue tones and timeless romantic details.", href: "/template-1", image: "/template-previews/template-1.webp" },
-  { number: "02", title: "The Editorial", description: "A warm, magazine-inspired design with expressive typography and a story-led split layout.", href: "/template-2", image: "/template-previews/template-2.webp" },
-  { number: "03", title: "Modern Heirloom", description: "A cinematic, refined invitation pairing a dramatic photo with keepsake-worthy details.", href: "/template-3", image: "/template-previews/template-3.webp" },
+  { number: "01", title: "Little Sprinkles", description: "A bright, playful first-birthday invitation with confetti energy and a soft storybook feel.", href: "/template-1", image: "/template-previews/template-1.webp" },
+  { number: "02", title: "The Debut Edit", description: "A polished editorial layout for Lemuel’s 18th birthday debut, with plum, blush, and champagne tones.", href: "/template-2", image: "/template-previews/template-2.webp" },
+  { number: "03", title: "Golden Chapter", description: "A cinematic, keepsake-worthy 60th birthday invitation with warm terracotta and ink accents.", href: "/template-3", image: "/template-previews/template-3.webp" },
 ];
 
 export default function TemplateMenu() {
   return <main className="min-h-screen bg-[#f8f7f3] px-5 py-10 text-[#243b45] sm:px-8 sm:py-16">
     <div className="mx-auto max-w-6xl">
       <header className="flex flex-wrap items-center justify-between gap-5 border-b border-[#d8d6ce] pb-7">
-        <div><p className="text-[10px] uppercase tracking-[0.32em] text-[#718994]">Invitation collection</p><p className="mt-2 font-serif text-3xl">Wedding invitations</p></div>
+        <div><p className="text-[10px] uppercase tracking-[0.32em] text-[#865b9d]">Invitation collection</p><p className="mt-2 font-serif text-3xl">Birthday RSVP templates</p></div>
         <Link href="/admin" className="rounded-full border border-[#bfcbd0] px-5 py-2.5 text-xs font-medium transition hover:bg-white">Admin dashboard ↗</Link>
       </header>
       <div className="max-w-3xl py-14 sm:py-20">
         <p className="text-[11px] uppercase tracking-[0.3em] text-[#718994]">Choose a design</p>
         <h1 className="mt-5 font-serif text-5xl leading-[0.95] tracking-[-0.035em] sm:text-7xl">One celebration.<br/><em>Three ways to tell the story.</em></h1>
-        <p className="mt-7 max-w-xl text-sm leading-7 text-[#597384]">Explore each invitation and choose the design that feels right. All three send replies to the same guest list and dashboard.</p>
+        <p className="mt-7 max-w-xl text-sm leading-7 text-[#597384]">Explore three distinct ways to celebrate Lemuel — from his first birthday to his 18th debut and 60th chapter. All three send replies to the same guest list and dashboard.</p>
       </div>
       <section className="grid gap-5 md:grid-cols-3" aria-label="Invitation templates">
         {designs.map((design) => <Link key={design.number} href={design.href} className="group overflow-hidden rounded-[1.5rem] border border-[#e0e3df] bg-white shadow-[0_14px_40px_rgba(36,59,69,0.06)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(36,59,69,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#476279]">

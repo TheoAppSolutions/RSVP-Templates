@@ -21,13 +21,13 @@ export default function Countdown() {
   const passed = remaining !== null && remaining <= 0;
 
   return (
-    <section id="countdown" className="border-y border-dusty-200 bg-dusty-100 px-6 py-9 md:py-11" aria-label="Countdown to the wedding">
+    <section id="countdown" className="border-y border-dusty-200 bg-dusty-100 px-6 py-9 md:py-11" aria-label="Countdown to Lemuel’s birthday">
       <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_1.25fr] md:gap-16">
         <div className="text-center md:text-left">
-          <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-dusty-600">The day we say I do</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-dusty-600">The day Lemuel turns 18</p>
           <p className="mt-2 font-serif text-3xl font-light italic text-dusty-900 md:text-4xl">{EVENT.dateLong}</p>
         </div>
-        {passed ? <p className="text-center font-serif text-3xl font-light italic text-dusty-800">Forever starts here</p> : (
+        {passed ? <p className="text-center font-serif text-3xl font-light italic text-dusty-800">Let the birthday fun begin</p> : (
           <div className="grid grid-cols-4 divide-x divide-dusty-300 border-x border-dusty-300" role="timer" aria-live="off">
             {parts.map(([label, value]) => (
               <div key={label} className="px-1 text-center sm:px-3">

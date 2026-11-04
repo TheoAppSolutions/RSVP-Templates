@@ -15,7 +15,7 @@ export default function MapSection() {
       <div className="mx-auto max-w-6xl">
         <header className="mx-auto max-w-2xl text-center">
           <p className="text-[10px] uppercase tracking-[0.45em] text-dusty-500">Join us in Tacloban City</p>
-          <h2 id="venues-title" className="mt-4 font-serif text-5xl font-light italic text-dusty-800 md:text-6xl">The Venues</h2>
+          <h2 id="venues-title" className="mt-4 font-serif text-5xl font-light italic text-dusty-800 md:text-6xl">The party place</h2>
           <div className="mt-6 flex items-center justify-center gap-3 text-dusty-400" aria-hidden>
             <span className="h-px w-14 bg-current" />
             <span className="h-2 w-2 rotate-45 border border-current" />
@@ -24,7 +24,7 @@ export default function MapSection() {
         </header>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1" role="tablist" aria-label="Wedding venues">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1" role="tablist" aria-label="Birthday venue">
             {VENUES.map((venue, index) => {
               const active = index === activeIndex;
               return (

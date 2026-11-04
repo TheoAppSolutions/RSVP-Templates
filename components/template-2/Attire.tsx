@@ -134,9 +134,9 @@ export default function Attire() {
         <div className="grid gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-16">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.36em] text-dusty-600">02 / What to wear</p>
-            <h2 id="attire-title" className="mt-4 font-serif text-5xl font-light tracking-[-0.035em] text-dusty-900 sm:text-6xl">Dress for <em>the day</em></h2>
+            <h2 id="attire-title" className="mt-4 font-serif text-5xl font-light tracking-[-0.035em] text-dusty-900 sm:text-6xl">Dress for <em>the party</em></h2>
             <p className="mt-5 font-serif text-2xl italic text-dusty-700">{EVENT.dressCode}</p>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-dusty-700">Polished and refined: dressy, but not black tie. We&apos;d love to see you in shades of our {EVENT.color.toLowerCase()} palette.</p>
+            <p className="mt-6 max-w-sm text-sm leading-7 text-dusty-700">Colorful, comfortable, and photo-ready. We&apos;d love to see you in shades of our {EVENT.color.toLowerCase()} palette.</p>
             <div className="mt-9 flex flex-wrap gap-4" role="group" aria-label="Choose an attire color">
               {SWATCHES.map(({ name, color }) => {
                 const selected = selectedColor === color;

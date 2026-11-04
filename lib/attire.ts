@@ -1,11 +1,11 @@
 export type ColorPalette = Record<50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900, string>;
 
 const SWATCH_DEFINITIONS = [
-  { name: "Mist", shade: 200 },
-  { name: "Powder", shade: 300 },
-  { name: "Dusty Blue", shade: 400 },
-  { name: "Steel", shade: 500 },
-  { name: "Slate", shade: 700 },
+  { name: "Sunshine", shade: 200 },
+  { name: "Blush", shade: 300 },
+  { name: "Lemon", shade: 400 },
+  { name: "Tangerine", shade: 500 },
+  { name: "Plum", shade: 700 },
 ] as const;
 
 export function createSwatches(colors: ColorPalette) {
@@ -14,15 +14,15 @@ export function createSwatches(colors: ColorPalette) {
 
 export const ATTIRE = [
   {
-    label: "Gentlemen",
-    note: "Suit and tie, or a barong, paired with dress shoes.",
+    label: "Party looks",
+    note: "Colorful shirts, smart trousers, or a relaxed suit with a little personality.",
     image: "/attire-men.webp",
-    alt: "Three examples of semi-formal menswear, including a barong Tagalog",
+    alt: "Examples of colorful semi-formal party outfits",
   },
   {
-    label: "Ladies",
-    note: "Midi or cocktail dress, with heels or dressy flats.",
+    label: "Festive dress",
+    note: "A midi, cocktail dress, or polished jumpsuit in a joyful color.",
     image: "/attire-women.webp",
-    alt: "Three examples of semi-formal dresses",
+    alt: "Examples of colorful semi-formal dresses",
   },
 ] as const;

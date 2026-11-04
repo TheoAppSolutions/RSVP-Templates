@@ -8,7 +8,7 @@ const script = localFont({ src: "../fonts/dancing-script-latin.woff2", variable:
 
 export const metadata: Metadata = {
   title: "Wedding RSVP templates",
-  description: "Explore three invitation designs and choose the right look for your wedding.",
+  description: "Explore three birthday RSVP designs for Lemuel’s 1st birthday, 18th debut, and 60th celebration.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

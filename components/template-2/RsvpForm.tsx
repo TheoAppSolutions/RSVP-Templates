@@ -162,7 +162,7 @@ export default function RsvpForm({ variant = 1 }: { variant?: 1 | 2 | 3 }) {
       <div>
         <div className="flex items-end justify-between gap-4">
           <label htmlFor={`rsvp-message-${variant}`} className="text-[10px] uppercase tracking-[0.3em] text-dusty-600">
-            Message for the couple
+            Birthday message for Lemuel
           </label>
           <span className="text-[10px] tabular-nums text-dusty-400">{message.length}/1000</span>
         </div>

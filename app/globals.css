@@ -1,5 +1,5 @@
-:root { --dusty-50: 244 247 250; --dusty-100: 230 237 243; --dusty-200: 207 220 231; --dusty-300: 176 198 216; --dusty-400: 143 170 192; --dusty-500: 113 146 172; --dusty-600: 90 122 148; --dusty-700: 71 98 121; --dusty-800: 54 75 93; --dusty-900: 38 54 68; --dusty-950: 20 32 42; }
-.template-two { --dusty-50: 250 248 244; --dusty-100: 241 237 230; --dusty-200: 222 216 206; --dusty-300: 195 190 179; --dusty-400: 159 170 176; --dusty-500: 113 137 148; --dusty-600: 89 115 132; --dusty-700: 62 93 112; --dusty-800: 42 70 87; --dusty-900: 29 54 69; --dusty-950: 18 37 49; min-height: 100vh; }
+:root { --dusty-50: 255 249 237; --dusty-100: 255 240 201; --dusty-200: 249 221 160; --dusty-300: 246 189 114; --dusty-400: 243 140 99; --dusty-500: 217 101 88; --dusty-600: 189 75 85; --dusty-700: 142 63 89; --dusty-800: 101 54 78; --dusty-900: 61 41 61; --dusty-950: 37 26 41; }
+.template-two { --dusty-50: 251 248 255; --dusty-100: 240 233 248; --dusty-200: 221 208 236; --dusty-300: 197 175 217; --dusty-400: 168 132 194; --dusty-500: 134 91 157; --dusty-600: 111 71 127; --dusty-700: 89 56 95; --dusty-800: 66 43 74; --dusty-900: 44 32 52; --dusty-950: 29 21 34; min-height: 100vh; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -92,6 +92,45 @@ body { @apply bg-dusty-50 text-dusty-900 font-sans antialiased; }
     animation-play-state: paused !important;
   }
 }
+
+/* Birthday collection overrides */
+.template-one { min-height: 100vh; background: rgb(var(--dusty-50)); }
+.birthday-hero-one { background: linear-gradient(135deg, #8e3f59 0%, #d96558 48%, #f38c63 100%); }
+.birthday-hero-one::before { content: ""; position: absolute; inset: auto -12vw -22vw auto; width: 58vw; height: 58vw; border: 1px solid #ffffff38; border-radius: 50%; box-shadow: 0 0 0 45px #ffffff0d, 0 0 0 90px #ffffff08; }
+.birthday-sun { position: absolute; top: 12%; right: 12%; width: clamp(180px, 23vw, 360px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff7c9 0 5%, #ffd66a 25%, #f3a15c 63%, #f3a15c00 64%); opacity: .92; }
+.birthday-confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.birthday-confetti i { position: absolute; display: block; width: 12px; height: 30px; border-radius: 99px; background: #fff7c9; opacity: .72; transform: rotate(28deg); }
+.birthday-confetti i:nth-child(1) { left: 8%; top: 22%; background: #f9dda0; } .birthday-confetti i:nth-child(2) { left: 22%; top: 11%; transform: rotate(-28deg); background: #c5e5ef; } .birthday-confetti i:nth-child(3) { left: 43%; top: 19%; height: 18px; background: #fff; } .birthday-confetti i:nth-child(4) { left: 76%; top: 25%; transform: rotate(70deg); background: #f9dda0; } .birthday-confetti i:nth-child(5) { left: 88%; top: 52%; height: 18px; background: #fff; } .birthday-confetti i:nth-child(6) { left: 69%; top: 77%; transform: rotate(-44deg); background: #c5e5ef; } .birthday-confetti i:nth-child(7) { left: 14%; top: 72%; transform: rotate(80deg); background: #f9dda0; } .birthday-confetti i:nth-child(8) { left: 52%; top: 82%; height: 20px; background: #fff; }
+.birthday-hero-one h1 { position: relative; text-shadow: 0 10px 30px #65364e55; }
+.birthday-memory-card { min-height: 280px; color: #3d293d; }
+.birthday-memory-card-1 { background: #f9dda0; } .birthday-memory-card-2 { background: #c5e5ef; } .birthday-memory-card-3 { background: #f7b4a0; } .birthday-memory-card-4 { background: #d9c5e6; } .birthday-memory-card-5 { background: #c5dbb2; }
+
+.template-two .hero-two { color: #2c2034; }
+.template-two .birthday-editorial .hero-two-stage { background: radial-gradient(circle at 18% 20%, #f7d7ef 0 12%, transparent 13%), linear-gradient(135deg, #5b3b70 0%, #8a5a9c 46%, #d8a3b8 100%); }
+.template-two .birthday-editorial .hero-two-stage::after { background: linear-gradient(transparent, #2c203488); }
+.template-two .birthday-editorial-art { position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-start; padding-left: 12%; color: #fbeefd; }
+.template-two .birthday-editorial-art::before, .template-two .birthday-editorial-art::after { content: ""; position: absolute; border: 1px solid #ffffff5c; border-radius: 50%; }
+.template-two .birthday-editorial-art::before { width: 42vw; height: 42vw; } .template-two .birthday-editorial-art::after { width: 29vw; height: 29vw; }
+.template-two .birthday-editorial-art span { position: relative; z-index: 1; font-family: var(--font-serif), Georgia, serif; font-size: clamp(180px, 30vw, 430px); font-weight: 300; letter-spacing: -.12em; line-height: .7; }
+.template-two .birthday-editorial-art i { position: absolute; z-index: 2; margin: 170px 0 0 130px; font-family: var(--font-script), cursive; font-size: clamp(28px, 4vw, 60px); transform: rotate(-12deg); }
+.template-two .birthday-editorial .hero-two-panel { background: #fffdf9e8; border: 1px solid #ffffffaa; box-shadow: 0 22px 60px #2c203444; }
+.birthday-editorial-feature { background: linear-gradient(135deg, #51335e, #a8658b 52%, #e2ad9d); }
+
+.birthday-three { --paper: #fffaf0; --cream: #f5ead9; --ink: #2b2833; --muted: #756b68; --line: #e4d5c1; --gold: #c47755; background: var(--paper); }
+.birthday-three .hero { background: #7f493e; }
+.birthday-three-art { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; color: #f7e4c5; background: radial-gradient(circle at 25% 25%, #e7a45d 0 4%, transparent 5%), radial-gradient(circle at 80% 22%, #c3775c 0 6%, transparent 7%), linear-gradient(135deg, #402d38 0%, #8b4e40 48%, #d38a56 100%); }
+.birthday-three-art::before { content: ""; position: absolute; width: min(58vw, 700px); aspect-ratio: 1; border: 1px solid #f7e4c55c; border-radius: 50%; box-shadow: 0 0 0 25px #f7e4c514, 0 0 0 90px #f7e4c50b; }
+.birthday-three-art span { position: relative; font-family: var(--font-serif), Georgia, serif; font-size: clamp(180px, 30vw, 450px); font-weight: 300; letter-spacing: -.13em; line-height: .7; }
+.birthday-three-art i { position: relative; margin-top: 42px; font-family: var(--font-serif), Georgia, serif; font-size: 13px; font-style: italic; letter-spacing: .28em; text-transform: uppercase; }
+.birthday-three .hero-shade { background: linear-gradient(90deg, #2b283322 15%, #402d3866 48%, #2b2833d9 100%), linear-gradient(0deg, #2b2833a6, transparent 58%); }
+.birthday-three .hero-kicker, .birthday-three .hero h1 i, .birthday-three .hero-bottom > span i, .birthday-three .hero-bottom a span, .birthday-three .nav-brand span { color: #f0c77d; }
+.birthday-three .rsvp-section { background: #3e2c39; }
+.birthday-three .rsvp-monogram { color: #efbe7a; }
+.birthday-timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.birthday-timeline-card { min-height: 240px; display: flex; flex-direction: column; justify-content: space-between; padding: 25px; background: #f2dfc1; color: #2b2833; border: 1px solid #d8b88f; }
+.birthday-timeline-card-2 { margin-top: 38px; background: #dfc3c1; border-color: #c8938c; } .birthday-timeline-card-3 { background: #c7d0c2; border-color: #9eb09f; } .birthday-timeline-card-4 { margin-top: 38px; background: #e8b06e; border-color: #c9824b; }
+.birthday-timeline-card span { font-family: var(--font-serif), Georgia, serif; font-size: 32px; } .birthday-timeline-card h3 { font-family: var(--font-serif), Georgia, serif; font-size: 25px; font-weight: 400; line-height: 1.05; } .birthday-timeline-card i { color: #a9654e; font-size: 23px; font-style: normal; }
+@media (max-width: 700px) { .birthday-timeline-grid { grid-template-columns: repeat(2, 1fr); } .birthday-timeline-card-2, .birthday-timeline-card-4 { margin-top: 0; } .template-two .birthday-editorial-art { padding-left: 0; justify-content: center; } .template-two .birthday-editorial-art span { opacity: .8; } }
 
 /* Guest-facing invitation */
 html { scroll-behavior: smooth; }

@@ -44,7 +44,7 @@ export default function Attire() {
           <feComposite in="recolored-fabric" in2="SourceGraphic" operator="over" />
         </filter>
       </svg>
-      <p className="text-xs uppercase tracking-[0.4em] text-dusty-500">Dress Code</p>
+      <p className="text-xs uppercase tracking-[0.4em] text-dusty-500">Party dress code</p>
       <h2 className="mt-3 font-serif text-5xl font-light italic text-dusty-800 md:text-6xl">
         {EVENT.dressCode}
       </h2>
@@ -54,7 +54,7 @@ export default function Attire() {
         <span className="h-px w-12 bg-current" />
       </div>
       <p className="mx-auto mt-5 max-w-xl leading-relaxed text-dusty-700">
-        Polished and refined: dressy, but not black-tie. We&apos;d love to see you in shades of our {EVENT.color.toLowerCase()} palette.
+        Come colorful, comfortable, and ready for photos. We&apos;d love to see you in shades of our {EVENT.color.toLowerCase()} palette.
       </p>
 
       <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-5" role="group" aria-label="Choose an attire color to preview">
